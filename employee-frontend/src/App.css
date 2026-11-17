@@ -1,0 +1,270 @@
+/* --- GLOBAL --- */
+body {
+  background-color: #f4f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Base Container (For Login) */
+.container {
+  width: 100%;
+  max-width: 500px; 
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+/* Wide Container (For Dashboard) */
+.wide-container {
+  max-width: 900px !important; /* Forces the dashboard to be wide */
+  width: 100% !important;      /* ADDED: Forces the container to stretch */
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #222;
+}
+
+/* --- FORM INPUTS --- */
+input, select {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* --- BUTTONS --- */
+button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* --- AUTH SCREEN TOGGLE --- */
+.toggle-text {
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.toggle-text span {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.toggle-text span:hover {
+  text-decoration: underline;
+}
+
+/* --- DASHBOARD HEADER --- */
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  width: 100%; 
+}
+
+.header h2 {
+  margin: 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap; 
+}
+
+.admin-badge {
+  color: #ff4757;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.logout-btn {
+  width: auto;
+  margin: 0;
+  padding: 10px 25px;
+  background-color: #ff4757;
+}
+
+.logout-btn:hover {
+  background-color: #ff2e43;
+}
+
+/* --- TABS --- */
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.tabs button {
+  flex: 1; 
+  margin: 0;
+  background-color: #f1f3f5;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabs button:hover {
+  background-color: #e2e6ea;
+}
+
+.tabs button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* --- CARDS & LISTS --- */
+.item-card {
+  border: none;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #eaf4fc;
+  box-sizing: border-box;
+}
+
+.add-card h4 {
+  text-align: center;
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.add-card form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.add-card form input, 
+.add-card form select {
+  flex: 1 1 30%; 
+  margin-bottom: 0;
+}
+
+.create-btn {
+  flex: 1 1 100%;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* --- LIST ITEMS --- */
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  padding: 20px 30px; 
+  border-radius: 8px;
+  margin-bottom: 15px;
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.list-item h4 {
+  margin: 0;
+  color: #007bff;
+  font-size: 18px;
+}
+
+.list-item p {
+  margin: 5px 0 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.delete-btn {
+  width: auto;
+  margin: 0;
+  padding: 8px 16px;
+  background-color: #ff4757;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background-color: #ff2e43;
+}
+
+/* --- WIDE STATS GRID --- */
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.stat-card {
+  flex: 1 1 calc(50% - 20px); 
+  min-width: 250px;
+  text-align: left; 
+  padding: 25px;
+  margin-bottom: 0;
+  background-color: #eaf4fc; 
+  border-left: 6px solid #007bff; 
+  box-sizing: border-box;
+}
+
+.stat-card h4 {
+  margin-top: 0;
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-card p {
+  font-size: 48px; 
+  font-weight: bold;
+  margin: 0;
+  color: #007bff;
+  line-height: 1;
+}
+
+.stat-label {
+  color: #777;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
