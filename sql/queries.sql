@@ -28,8 +28,4 @@ SET department_id = (SELECT id FROM departments WHERE name = 'Research & Develop
 WHERE email = 'bob@test.com';
 COMMIT;
 
--- 7. Index Justification (Task 27)
--- Query: SELECT * FROM employees WHERE email = 'alice@test.com';
--- An index should be created on the 'email' column because it is used heavily in the login and search routes. 
--- Creating an index on 'email' makes this specific query run in O(log n) time instead of scanning the whole table.
 CREATE INDEX idx_employees_email ON employees(email);
