@@ -41,7 +41,8 @@ function AdminDashboard({ token }) {
 
   // --- DELETE ---
   const handleDelete = async (id) => {
-    if(!window.confirm("Are you sure?")) return;
+    if(!window.confirm("Are you sure?")) 
+    return;
     const res = await fetch(`http://localhost:3000/api/employees/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
