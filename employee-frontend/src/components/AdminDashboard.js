@@ -6,10 +6,8 @@ function AdminDashboard({ token }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterDept, setFilterDept] = useState('');
   
-  // State for creating new employee
   const [newEmp, setNewEmp] = useState({ firstName: '', lastName: '', email: '', password: '', role: 'user', department: '' });
 
-  // State for editing an employee
   const [editingId, setEditingId] = useState(null);
   const [editFormData, setEditFormData] = useState({ firstName: '', lastName: '', role: 'user', department: '' });
 
@@ -75,8 +73,8 @@ function AdminDashboard({ token }) {
     
     if (res.ok) {
       alert('Employee Updated!');
-      setEditingId(null); // Close the edit form
-      loadData(); // Refresh list
+      setEditingId(null); 
+      loadData(); 
     } else {
       alert('Failed to update employee.');
     }
@@ -132,7 +130,6 @@ function AdminDashboard({ token }) {
       {filteredEmployees.map(emp => (
         <div key={emp._id} className="list-item">
           
-          {/* IF EDITING THIS EMPLOYEE, SHOW THE EDIT FORM */}
           {editingId === emp._id ? (
             <form onSubmit={handleUpdate} style={{ display: 'flex', width: '100%', gap: '10px', alignItems: 'center' }}>
               <input type="text" value={editFormData.firstName} onChange={e => setEditFormData({...editFormData, firstName: e.target.value})} required style={{ marginBottom: 0 }} />
@@ -151,7 +148,6 @@ function AdminDashboard({ token }) {
             </form>
           ) : (
             
-            /* IF NOT EDITING, SHOW THE NORMAL CARD */
             <>
               <div>
                 <h4>{emp.firstName} {emp.lastName} ({emp.role})</h4>

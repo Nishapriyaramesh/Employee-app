@@ -10,7 +10,6 @@ function Login({ setToken }) {
   const [department, setDepartment] = useState('');
   const [departments, setDepartments] = useState([]);
 
-  // Fetch departments for the register form
   useEffect(() => {
     fetch('http://localhost:3000/api/departments')
       .then(res => res.json())
