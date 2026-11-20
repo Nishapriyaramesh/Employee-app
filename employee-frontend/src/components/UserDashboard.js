@@ -7,11 +7,11 @@ function UserDashboard() {
   const [filterDept, setFilterDept] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/employees')
+    fetch('http://localhost:5000/api/employees')
       .then(res => res.json())
       .then(data => setEmployees(data));
 
-    fetch('http://localhost:3000/api/departments')
+    fetch('http://localhost:5000/api/departments')
       .then(res => res.json())
       .then(data => setDepartments(data));
   }, []);

@@ -4,7 +4,7 @@ function Stats() {
   const [stats, setStats] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/employees/stats')
+    fetch('http://localhost:5000/api/employees/stats')
       .then(res => res.json())
       .then(data => setStats(data));
   }, []);

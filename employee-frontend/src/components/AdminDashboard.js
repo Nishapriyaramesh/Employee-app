@@ -12,14 +12,14 @@ function AdminDashboard({ token }) {
   const [editFormData, setEditFormData] = useState({ firstName: '', lastName: '', role: 'user', department: '' });
 
   const loadData = () => {
-    fetch('http://localhost:3000/api/employees')
+    fetch('http://localhost:5000/api/employees')
       .then(res => res.json())
       .then(data => setEmployees(data));
   };
 
   useEffect(() => {
     loadData();
-    fetch('http://localhost:3000/api/departments')
+    fetch('http://localhost:5000/api/departments')
       .then(res => res.json())
       .then(data => setDepartments(data));
   }, []);
@@ -27,7 +27,7 @@ function AdminDashboard({ token }) {
   // --- CREATE ---
   const handleCreate = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:3000/api/employees', {
+    const res = await fetch('http://localhost:5000/api/employees', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
       body: JSON.stringify(newEmp)
@@ -43,7 +43,7 @@ function AdminDashboard({ token }) {
   const handleDelete = async (id) => {
     if(!window.confirm("Are you sure?")) 
     return;
-    const res = await fetch(`http://localhost:3000/api/employees/${id}`, {
+    const res = await fetch(`http://localhost:5000/api/employees/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
     });
@@ -66,7 +66,7 @@ function AdminDashboard({ token }) {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:3000/api/employees/${editingId}`, {
+    const res = await fetch(`http://localhost:5000/api/employees/${editingId}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
       body: JSON.stringify(editFormData)

@@ -11,7 +11,7 @@ function Login({ setToken }) {
   const [departments, setDepartments] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/departments')
+    fetch('http://localhost:5000/api/departments')
       .then(res => res.json())
       .then(data => setDepartments(data))
       .catch(err => console.log(err));
@@ -19,7 +19,7 @@ function Login({ setToken }) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:3000/api/login', {
+    const res = await fetch('http://localhost:5000/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
@@ -35,7 +35,7 @@ function Login({ setToken }) {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:3000/api/register', {
+    const res = await fetch('http://localhost:5000/api/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ firstName, lastName, email, password, role, department })
